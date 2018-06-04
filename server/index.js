@@ -1,11 +1,11 @@
 const express = require('express');
-const bodyParser = ('body-parser');
+const bodyParser = require('body-parser');
 const db = require('../database/index.js');
 const $ = require('jquery');
 
 const app = express();
 
-app.use(express.static('../public'));
+app.use(express.static(__dirname + '/../client/dist'));
 
 app.use(bodyParser.json());
 
