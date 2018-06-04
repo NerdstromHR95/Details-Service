@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:clothing');
+mongoose.connect('mongodb://localhost/clothing');
 
-const itemSchema = mongoose.schema({
+const itemSchema = mongoose.Schema({
   title: String,
   brand: String,
   price: String,
@@ -321,7 +321,7 @@ const getAllItems = function (callback) {
   });
 };
 
-const colorSchema = mongoose.schema({
+const colorSchema = mongoose.Schema({
   color: String,
 });
 
@@ -342,7 +342,7 @@ const getAllColors = function (callback) {
   });
 };
 
-const sizeSchema = mongoose.schema({
+const sizeSchema = mongoose.Schema({
   size: String,
 });
 
