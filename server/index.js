@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
-const $ = require('jquery');
 
 const app = express();
 
@@ -9,8 +8,8 @@ app.use(express.static(__dirname + '/../client/dist'));
 
 app.use(bodyParser.json());
 
-app.get('/items', function(req, res) {
-	db.getAllItems(function(items) {
+app.get('/item', function(req, res) {
+	db.getFirstItem(function(items) {
 		res.send(items);
 	});
 });

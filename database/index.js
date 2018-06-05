@@ -334,6 +334,16 @@ const fillDatabase = function() {
   Size.create({ size: 'l' });
 }
 
+const getFirstItem = function(callback) {
+  Item.find().limit(1).exec((err, results) => {
+    if (err) {
+      console.log('ERROR:', err);
+    }
+    console.log('Found in the DB:', results);
+    callback(results);
+  });
+};
+
 const getAllItems = function (callback) {
   Item.find().exec((err, results) => {
     if (err) {
@@ -363,6 +373,7 @@ const getAllSizes = function (callback) {
   });
 };
 
+module.exports.getFirstItem = getFirstItem;
 module.exports.getAllItems = getAllItems;
 module.exports.getAllColors = getAllColors;
 module.exports.getAllSizes = getAllSizes;
