@@ -8,16 +8,15 @@ class ColorSelectMenu extends React.Component {
 	}
 
 	handleClick(e) {
-		console.log('event target value:', e.target.innerHTML)
 		this.props.dropMenu();
-		this.props.handleSelect(e.target.innerHTML)
+		this.props.handleSelect(e.target.id)
 	}
 
 	render() {
 	  return (
 	    <div className='menu'>
 	      <div className='sizeOption'><strong className='smallIndent'>Please Choose A Color</strong></div>
-	      {this.props.options.map(color => (<div className='colorOption' onClick={this.handleClick} key={color}>{color}</div>))}
+	      {this.props.options.map(color => (<div className='colorOption' onClick={this.handleClick} key={color} id={color}>{color}</div>))}
 	    </div>
 	  )
 	}

@@ -9,12 +9,8 @@ class Details extends React.Component {
     super();
     this.state = {
       product: {},
-      colors: [],
-      sizes: [{}, {}, {}],
     };
     this.getitem = this.getItem.bind(this);
-    this.getSizes = this.getSizes.bind(this);
-    this.getColors = this.getColors.bind(this);
   }
 
   getItem() {
@@ -29,41 +25,11 @@ class Details extends React.Component {
       });
   }
 
-  getSizes() {
-    axios.get('http://localhost:3000/sizes')
-      .then(res => {
-        this.setState({
-          sizes: res.data
-        });
-      })
-      .catch(err => {
-        console.log('An error occurred: ', err);
-      });
-  }
-
-  getColors() {
-    axios.get('http://localhost:3000/colors')
-      .then(res => {
-        this.setState({
-          colors: res.data
-        });
-      })
-      .catch(err => {
-        console.log('An error occurred: ', err);
-      });
-  }
-
   componentDidMount() {
     this.getItem();
   }
 
-  // componentDidUpdate() {
-  //   this.getItem();
-  //   this.getColors();
-  // }
-
   render() {
-    console.log(this.state.sizes)
     return (
       <div className='main'>  
         <div className='title'>

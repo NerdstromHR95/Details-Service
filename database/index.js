@@ -335,7 +335,7 @@ const fillDatabase = function() {
 }
 
 const getFirstItem = function(callback) {
-  Item.find().limit(1).exec((err, results) => {
+  Item.aggregate([{$sample: {size: 1}}]).exec((err, results) => {
     if (err) {
       console.log('ERROR:', err);
     }
