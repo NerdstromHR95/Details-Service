@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectMenu from './SelectMenu.jsx'
+import ColorSelectMenu from './ColorSelectMenu.jsx'
 
 class ColorSelect extends React.Component {
 	constructor(props) {
@@ -28,7 +28,7 @@ class ColorSelect extends React.Component {
 	render() {
 		const menuOpen = this.state.menuOpen
 		if (menuOpen) {
-			return <SelectMenu dropMenu={this.dropMenu} handleSelect={this.handleSelect} options={this.state.options}/>
+			return <ColorSelectMenu dropMenu={this.dropMenu} handleSelect={this.handleSelect} options={this.state.options}/>
 		} else {
 			return (
 				<div className='selectedColor' onClick={this.dropMenu}><span className='smallIndent'>{this.state.selected}</span></div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectMenu from './SelectMenu.jsx'
+import SizeSelectMenu from './SizeSelectMenu.jsx'
 
 
 class SizeSelect extends React.Component {
@@ -30,7 +30,7 @@ class SizeSelect extends React.Component {
 		//console.log(this.state.options)
 		const menuOpen = this.state.menuOpen
 		if (menuOpen) {
-			return <SelectMenu dropMenu={this.dropMenu} handleSelect={this.handleSelect} options={this.state.options}/>
+			return <SizeSelectMenu dropMenu={this.dropMenu} handleSelect={this.handleSelect} options={this.state.options}/>
 		} else {
 			return (
 				<div className='selectedSize' onClick={this.dropMenu}><span className='smallIndent'>{this.state.selected}</span></div>

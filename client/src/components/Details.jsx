@@ -84,6 +84,7 @@ class Details extends React.Component {
           </div>
           <SizeSelect />
         </div>
+        <div className='menuBuffer'></div>
         <div className='colors'>
           <ColorSelect />
         </div>

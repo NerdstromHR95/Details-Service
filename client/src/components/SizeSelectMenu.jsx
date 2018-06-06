@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class SelectMenu extends React.Component {
+class SizeSelectMenu extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleClick = this.handleClick.bind(this)
@@ -15,7 +15,7 @@ class SelectMenu extends React.Component {
 
 	render() {
 	  return (
-	    <div>
+	    <div className='menu'>
 	      <div className='sizeOption'><strong className='smallIndent'>Please Choose A Size</strong></div>
 	      {this.props.options.map(size => (<div className='sizeOption' onClick={this.handleClick} key={size}>{size}</div>))}
 	    </div>
@@ -23,4 +23,4 @@ class SelectMenu extends React.Component {
 	}
 }
 
-export default SelectMenu;
+export default SizeSelectMenu;
