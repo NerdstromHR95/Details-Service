@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import SizeSelect from './SizeSelect.jsx'
+import ColorSelect from './ColorSelect.jsx'
 
 
 class Details extends React.Component {
@@ -81,12 +82,10 @@ class Details extends React.Component {
           <div>
             <strong>Fit</strong>  <span className='small'>True to size.</span>
           </div>
-          <SizeSelect sizes={this.state.sizes} />
+          <SizeSelect />
         </div>
         <div className='colors'>
-          <select className='sizeDropdown'>
-            {this.state.colors.map(color => <option className='colorOption'>{color.color}</option>)}
-          </select>
+          <ColorSelect />
         </div>
       </div>
     );

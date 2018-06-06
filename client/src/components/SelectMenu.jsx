@@ -16,7 +16,8 @@ class SelectMenu extends React.Component {
 	render() {
 	  return (
 	    <div>
-	      {this.props.options.map(size => (<div className='sizeOption' onClick={this.handleClick} key={size} >{size}</div>))}
+	      <div className='sizeOption'><strong className='smallIndent'>Please Choose A Size</strong></div>
+	      {this.props.options.map(size => (<div className='sizeOption' onClick={this.handleClick} key={size}>{size}</div>))}
 	    </div>
 	  )
 	}
