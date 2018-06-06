@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import SizeSelect from './SizeSelect.jsx'
 
 
 class Details extends React.Component {
@@ -10,9 +11,12 @@ class Details extends React.Component {
       colors: [],
       sizes: [{}, {}, {}],
     };
+    this.getitem = this.getItem.bind(this);
+    this.getSizes = this.getSizes.bind(this);
+    this.getColors = this.getColors.bind(this);
   }
 
-  componentDidMount() {
+  getItem() {
     axios.get('http://localhost:3000/item')
       .then(res => {
         this.setState({
@@ -22,15 +26,9 @@ class Details extends React.Component {
       .catch(function(err) {
         console.log('An error occurred: ', err);
       });
-    axios.get('http://localhost:3000/colors')
-      .then(res => {
-        this.setState({
-          colors: res.data
-        });
-      })
-      .catch(err => {
-        console.log('An error occurred: ', err);
-      });
+  }
+
+  getSizes() {
     axios.get('http://localhost:3000/sizes')
       .then(res => {
         this.setState({
@@ -42,8 +40,29 @@ class Details extends React.Component {
       });
   }
 
+  getColors() {
+    axios.get('http://localhost:3000/colors')
+      .then(res => {
+        this.setState({
+          colors: res.data
+        });
+      })
+      .catch(err => {
+        console.log('An error occurred: ', err);
+      });
+  }
+
+  componentDidMount() {
+    this.getItem();
+  }
+
+  // componentDidUpdate() {
+  //   this.getItem();
+  //   this.getColors();
+  // }
+
   render() {
-    console.log(this.state.sizes[0].size);
+    console.log(this.state.sizes)
     return (
       <div className='main'>  
         <div className='title'>
@@ -62,9 +81,7 @@ class Details extends React.Component {
           <div>
             <strong>Fit</strong>  <span className='small'>True to size.</span>
           </div>
-          <select className='sizeDropdown'>
-            {this.state.sizes.map(size => <option className='sizeOption'>{size.size}</option>)}
-          </select>
+          <SizeSelect sizes={this.state.sizes} />
         </div>
         <div className='colors'>
           <select className='sizeDropdown'>

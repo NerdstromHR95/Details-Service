@@ -25,16 +25,16 @@ const Size = mongoose.model('Size', sizeSchema);
 
 const fillDatabase = function() {
   Item.create({
-    title: 'Pique Polo', brand: 'BURBERRY', price: '$175.00', description: 'An expensive polo',
+    title: 'Pique Polo', brand: 'BURBERRY', price: '$175.00', description: 'Burberry\'s signature checks peek from the two-button placket of a handsome polo cut from soft, piqué-knit cotton.',
   });
   Item.create({
-    title: 'Oxford Polo', brand: 'BURBERRY', price: '$170.00', description: 'A fancy polo',
+    title: 'Oxford Polo', brand: 'BURBERRY', price: '$170.00', description: 'Instantly recognizable, woven checks peeking out the placket brand a cotton piqué polo in a choice of vibrant hues.',
   });
   Item.create({
-    title: 'Bedford Polo', brand: 'VERSACE', price: '$145.00', description: 'A cool polo',
+    title: 'Bedford Polo', brand: 'VERSACE', price: '$145.00', description: 'Bold floral-print trim accents the placket of a classic prep polo patrolled in style with regal knight embroidery.',
   });
   Item.create({
-    title: 'Trim Fit Polo', brand: 'VERSACE', price: '$125.00', description: 'A plain polo',
+    title: 'Trim Fit Polo', brand: 'VERSACE', price: '$125.00', description: 'A slim-fitting polo made from soft, lustrous cotton jersey is branded with Versace\'s signature Medusa patch at the chest.',
   });
   Item.create({
     title: 'Jersey Polo', brand: 'VERSACE', price: '$195.00', description: 'A polo with an emblem',
