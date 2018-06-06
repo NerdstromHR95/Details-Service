@@ -121,3 +121,7 @@
 	z-index: 2;
 	width: 100%;
 }
+
+.starRating {
+	height: 20px;
+}

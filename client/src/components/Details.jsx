@@ -31,7 +31,10 @@ class Details extends React.Component {
 
   render() {
     return (
-      <div className='main'>  
+      <div className='main'> 
+        <div className='starRating'>
+        {this.state.product.star}
+        </div> 
         <div className='title'>
           {this.state.product.title} 
         </div>
