@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import SizeSelect from './SizeSelect.jsx'
-import ColorSelect from './ColorSelect.jsx'
+import SizeSelect from './SizeSelect.jsx';
+import ColorSelect from './ColorSelect.jsx';
+import StarRating from './StarRating.jsx';
 
 
 class Details extends React.Component {
@@ -33,7 +34,7 @@ class Details extends React.Component {
     return (
       <div className='main'> 
         <div className='starRating'>
-        {this.state.product.star}
+          <StarRating starRating={this.state.product.star}/>
         </div> 
         <div className='title'>
           {this.state.product.title} 
