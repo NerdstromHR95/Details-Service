@@ -10,7 +10,7 @@ const StarRating = function(props) {
 	return (
 		<div className='starRating'>
 			{stars}
-			{halfStar && <i class="fas fa-star-half"></i>}
+			{halfStar && <i className="fas fa-star-half"></i>}
 		</div>
 	)
 }
