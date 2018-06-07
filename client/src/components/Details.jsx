@@ -9,7 +9,7 @@ class Details extends React.Component {
   constructor() {
     super();
     this.state = {
-      product: {},
+      product: {}
     };
     this.getitem = this.getItem.bind(this);
   }
@@ -52,7 +52,7 @@ class Details extends React.Component {
           <div>
             <strong>Fit</strong>  <span className='small'>True to size.</span>
           </div>
-          <SizeSelect />
+          <SizeSelect category={this.state.product.category}/>
         </div>
         <div className='menuBuffer'></div>
         <div className='colors'>
