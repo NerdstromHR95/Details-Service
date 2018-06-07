@@ -103,7 +103,10 @@ class SizeSelect extends React.Component {
 			return <SizeSelectMenu dropMenu={this.dropMenu} handleSelect={this.handleSelect} options={this.state.options}/>
 		} else {
 			return (
-				<div className='selectedSize' onClick={this.dropMenu}><span className='smallIndent'>{this.state.selected}</span></div>
+				<div className='selectedSize' onClick={this.dropMenu}>
+				  <span className='smallIndent'>{this.state.selected}</span>
+				  <i class="fas fa-angle-down arrow"></i>
+				</div>
 			)
 		}
 	}

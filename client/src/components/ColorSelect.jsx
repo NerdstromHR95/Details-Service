@@ -31,7 +31,10 @@ class ColorSelect extends React.Component {
 			return <ColorSelectMenu dropMenu={this.dropMenu} handleSelect={this.handleSelect} options={this.state.options}/>
 		} else {
 			return (
-				<div className='selectedColor' onClick={this.dropMenu}><span className='smallIndent'>{this.state.selected}</span></div>
+				<div className='selectedColor' onClick={this.dropMenu}>
+				  <span className='smallIndent'>{this.state.selected}</span>
+				  <i class="fas fa-angle-down arrow"></i>
+				</div>
 			)
 		}
 	}
