@@ -136,3 +136,20 @@
 	margin-top: 10px;
 	margin-left: 10px;
 }
+
+.colorSwatches {
+	height: 40px;
+}
+
+.frontCircle {
+	position: absolute;
+	z-index: 10;
+
+}
+
+.backCircle {
+	position: absolute;
+	z-index: 9;
+	height: 40px;
+
+}

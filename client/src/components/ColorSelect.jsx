@@ -19,12 +19,14 @@ const ColorSwatches = (props) => {
 					    </circle>
 					}
 		      	    <circle 
+		      	      id={color}
 		      	      className='frontCircle' 
 		      	      r='13' 
 		      	      cx='15' 
 		      	      cy='15' 
 		      	      stroke='grey' 
 		      	      strokeWidth='1' 
+		      	      onClick={function(e){ props.handleSelect(e.target.id)}}
 		      	      fill={color}>
 		      	    </circle>
 		      	  </svg>
