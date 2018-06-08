@@ -9,7 +9,8 @@ class Details extends React.Component {
   constructor() {
     super();
     this.state = {
-      product: {}
+      product: {},
+      colors: ['Black', 'White', 'Blue', 'Red', 'Green'],
     };
     this.getitem = this.getItem.bind(this);
   }

@@ -105,7 +105,7 @@ class SizeSelect extends React.Component {
 			return (
 				<div className='selectedSize' onClick={this.dropMenu}>
 				  <span className='smallIndent'>{this.state.selected}</span>
-				  <i class="fas fa-angle-down arrow"></i>
+				  <i className="fas fa-angle-down arrow"></i>
 				</div>
 			)
 		}
