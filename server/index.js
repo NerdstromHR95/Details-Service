@@ -14,15 +14,33 @@ app.get('/item', function(req, res) {
 	});
 });
 
-app.get('/colors', function(req, res) {
-	db.getAllColors(function(colors) {
-		res.send(colors);
+app.get('/mensShirtSize', function(req, res) {
+	db.getMensShirtSizes(function(items) {
+		res.send(items);
 	});
 });
 
-app.get('/sizes', function(req, res) {
-	db.getAllSizes(function(sizes) {
-		res.send(sizes);
+app.get('/mensPantsSize', function(req, res) {
+	db.getMensPantsSizes(function(items) {
+		res.send(items);
+	});
+});
+
+app.get('/mensShortsSize', function(req, res) {
+	db.getMensShortsSizes(function(items) {
+		res.send(items);
+	});
+});
+
+app.get('/womensDressSize', function(req, res) {
+	db.getWomensDressSizes(function(items) {
+		res.send(items);
+	});
+});
+
+app.get('/womensShirtSize', function(req, res) {
+	db.getWomensShirtSizes(function(items) {
+		res.send(items);
 	});
 });
 
