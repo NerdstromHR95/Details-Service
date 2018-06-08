@@ -49,10 +49,16 @@ class Details extends React.Component {
   }
 
   handleClick() {
-    this.setState({
-      selectedSize: 'Size',
-      selectedColor: 'Color'
-    })
+    if (this.state.selectedColor === 'Color') {
+      alert('You must choose a color');
+    } else if (this.state.selectedSize === 'Size') {
+      alert('You must choose a size');
+    } else {
+      this.setState({
+        selectedSize: 'Size',
+        selectedColor: 'Color'
+      })
+    }
   }
 
   render() {
