@@ -6,13 +6,13 @@
 	margin-top: 160px;
 	position: relative;
 	z-index: 1;
+	font-family: 'Lato';
 }
 
 .title {
 	display: block;
 	font-size: 1.4em;
 	margin-bottom: 3px;
-	font-family: 'Brandon Text';
 	color: #373738;
 }
 
