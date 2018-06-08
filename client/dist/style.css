@@ -43,10 +43,11 @@
 .sizes {
 	display: block;
 	margin-top: 40px;
+	border-collapse: collapse;
 }
 
 .small {
-	font-size: .8em;
+	margin-left: 2px;
 }
 
 .sizeDropdown {
@@ -70,7 +71,7 @@
 }
 
 .sizeOption:hover {
-	border-bottom: 2px solid #373738;
+	border-bottom: 3px solid #bbbbbb;
 }
 
 .selectedSize {
@@ -81,7 +82,7 @@
 }
 
 .selectedSize:hover {
-	border-bottom: 2px solid #373738;
+	border-bottom: 3px solid #bbbbbb;
 }
 
 .smallIndent {
@@ -96,7 +97,7 @@
 }
 
 .selectedColor:hover {
-	border-bottom: 2px solid #373738;
+	border-bottom: 3px solid #bbbbbb;
 }
 
 .menuBuffer {
@@ -112,8 +113,15 @@
 	background-color: white;
 }
 
+.colorOptionText {
+	display: inline-block;
+	width: auto;
+	margin-left: 20px;
+	float: top;
+}
+
 .colorOption:hover {
-	border-bottom: 2px solid #373738;	
+	border-bottom: 3px solid #bbbbbb;	
 }
 
 .menu {
@@ -152,4 +160,26 @@
 	z-index: 9;
 	height: 40px;
 
+}
+
+.inputField {
+	margin-top: 30px;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	border: 2px solid rgb(238, 238, 238);
+}
+
+.addButton {
+	height: 40px;
+	width: 100%;
+	margin-top: 40px;
+	background-color: black;
+	color: white;
+	line-height: 40px;
+	text-align: center;
+}
+
+.addButton:hover {
+	background-color: grey;
 }

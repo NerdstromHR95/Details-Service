@@ -41,7 +41,7 @@ class ColorSelect extends React.Component {
 		super(props);
 		this.state = {
 			options: ['Black', 'White', 'Blue', 'Red', 'Green'],
-			selected: 'Color',
+			selected: this.props.selected,
 			menuOpen: false
 		}
 		this.dropMenu = this.dropMenu.bind(this);
@@ -55,9 +55,15 @@ class ColorSelect extends React.Component {
 	}
 
 	handleSelect(color) {
-		this.setState({
-			selected: color
-		})
+		this.props.handleClick(color);
+	}
+
+	componentDidUpdate(prevProps) {
+		if (prevProps.selected !== this.props.selected) {
+			this.setState({
+				selected: this.props.selected
+			})
+		}
 	}
 
 	render() {

@@ -11,8 +11,13 @@ class Details extends React.Component {
     this.state = {
       product: {},
       colors: ['Black', 'White', 'Blue', 'Red', 'Green'],
+      selectedColor: 'Color',
+      selectedSize: 'Size',
     };
     this.getitem = this.getItem.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.changeColor = this.changeColor.bind(this);
+    this.changeSize = this.changeSize.bind(this);
   }
 
   getItem() {
@@ -29,6 +34,25 @@ class Details extends React.Component {
 
   componentDidMount() {
     this.getItem();
+  }
+
+  changeColor(color) {
+    this.setState({
+      selectedColor: color
+    })
+  }
+
+  changeSize(size) {
+    this.setState({
+      selectedSize: size
+    })
+  }
+
+  handleClick() {
+    this.setState({
+      selectedSize: 'Size',
+      selectedColor: 'Color'
+    })
   }
 
   render() {
@@ -53,11 +77,19 @@ class Details extends React.Component {
           <div>
             <strong>Fit</strong>  <span className='small'>True to size.</span>
           </div>
-          <SizeSelect category={this.state.product.category}/>
+          <SizeSelect selected={this.state.selectedSize} handleClick={this.changeSize} category={this.state.product.category}/>
         </div>
         <div className='menuBuffer'></div>
         <div className='colors'>
-          <ColorSelect />
+          <ColorSelect selected={this.state.selectedColor} handleClick={this.changeColor} />
+        </div>
+        <div className='formField'>
+          <form>
+            <input type='text' className='inputField' value='1' />
+            <div className='addButton' onClick={this.handleClick} >
+              Add to Bag
+            </div>
+          </form>
         </div>
       </div>
     );
