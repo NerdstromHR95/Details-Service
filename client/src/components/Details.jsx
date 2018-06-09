@@ -56,7 +56,7 @@ class Details extends React.Component {
     } else {
       this.setState({
         selectedSize: 'Size',
-        selectedColor: 'Color'
+        selectedColor: 'ColorSelect'
       })
     }
   }
@@ -94,6 +94,9 @@ class Details extends React.Component {
             <input type='text' className='inputField' value='1' />
             <div className='addButton' onClick={this.handleClick} >
               Add to Bag
+            </div>
+            <div className='wishButton' onClick={this.handleClick} >
+              Add to Wishlist
             </div>
           </form>
         </div>
