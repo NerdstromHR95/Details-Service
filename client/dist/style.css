@@ -1,18 +1,18 @@
 .main {
 	display: inline-block;
-	border: 1px solid grey;
+	border: 1px solid #e3e3e3;
 	width: 300px;
 	height: 800px;
 	margin-top: 160px;
 	position: relative;
 	z-index: 1;
+	font-family: 'Lato';
 }
 
 .title {
 	display: block;
 	font-size: 1.4em;
 	margin-bottom: 3px;
-	font-family: 'Brandon Text';
 	color: #373738;
 }
 
@@ -43,10 +43,11 @@
 .sizes {
 	display: block;
 	margin-top: 40px;
+	border-collapse: collapse;
 }
 
 .small {
-	font-size: .8em;
+	margin-left: 2px;
 }
 
 .sizeDropdown {
@@ -64,24 +65,24 @@
 .sizeOption {
 	width: 100%;
 	height: 55px;
-	border: 1px solid grey;
+	border: 1px solid #e3e3e3;
 	line-height: 55px;
 	background-color: white;
 }
 
 .sizeOption:hover {
-	border-bottom: 2px solid #373738;
+	border-bottom: 3px solid #bbbbbb;
 }
 
 .selectedSize {
 	width: 100%;
 	height: 40px;
-	border: 1px solid grey;
+	border: 1px solid #e3e3e3;
 	line-height: 40px;
 }
 
 .selectedSize:hover {
-	border-bottom: 2px solid #373738;
+	border-bottom: 3px solid #bbbbbb;
 }
 
 .smallIndent {
@@ -91,12 +92,12 @@
 .selectedColor {
 	width: 100%;
 	height: 40px;
-	border: 1px solid grey;
+	border: 1px solid #e3e3e3;
 	line-height: 40px;
 }
 
 .selectedColor:hover {
-	border-bottom: 2px solid #373738;
+	border-bottom: 3px solid #bbbbbb;
 }
 
 .menuBuffer {
@@ -107,13 +108,20 @@
 .colorOption {
 	width: 100%;
 	height: 55px;
-	border: 1px solid grey;
+	border: 1px solid #e3e3e3;
 	line-height: 55px;
 	background-color: white;
 }
 
+.colorOptionText {
+	display: inline-block;
+	width: auto;
+	margin-left: 20px;
+	float: top;
+}
+
 .colorOption:hover {
-	border-bottom: 2px solid #373738;	
+	border-bottom: 3px solid #bbbbbb;	
 }
 
 .menu {
@@ -135,4 +143,58 @@
 .circle {
 	margin-top: 10px;
 	margin-left: 10px;
+}
+
+.colorSwatches {
+	height: 40px;
+}
+
+.frontCircle {
+	position: absolute;
+	z-index: 10;
+
+}
+
+.backCircle {
+	position: absolute;
+	z-index: 9;
+	height: 40px;
+
+}
+
+.inputField {
+	margin-top: 30px;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	border: 2px solid rgb(238, 238, 238);
+}
+
+.addButton {
+	height: 40px;
+	width: 100%;
+	margin-top: 40px;
+	background-color: black;
+	color: white;
+	line-height: 40px;
+	text-align: center;
+}
+
+.addButton:hover {
+	background-color: grey;
+}
+
+.wishButton {
+	height: 40px;
+	width: 100%;
+	margin-top: 40px;
+	background-color: white;
+	color: black;
+	line-height: 40px;
+	text-align: center;
+	border: 1px solid #e3e3e3;
+}
+
+.wishButton:hover {
+	background-color: grey;
 }

@@ -1,12 +1,47 @@
 import React from 'react';
 import ColorSelectMenu from './ColorSelectMenu.jsx'
 
+const ColorSwatches = (props) => {
+	return (
+		<div className='colorSwatches'>
+			{props.colors.map(color => {
+				return (
+				  <svg key={color} className='circle' height='35' width='35'>
+				    {color === props.selected && 
+					    <circle 
+					      className='backCircle' 
+					      r='13' 
+					      cx='15' 
+					      cy='15' 
+					      stroke='black' 
+					      strokeWidth='5' 
+					      fill='black'>
+					    </circle>
+					}
+		      	    <circle 
+		      	      id={color}
+		      	      className='frontCircle' 
+		      	      r='13' 
+		      	      cx='15' 
+		      	      cy='15' 
+		      	      stroke='grey' 
+		      	      strokeWidth='1' 
+		      	      onClick={function(e){ props.handleSelect(e.target.id)}}
+		      	      fill={color}>
+		      	    </circle>
+		      	  </svg>
+		        )
+			})}
+		</div>
+	)
+}
+
 class ColorSelect extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			options: ['black', 'white', 'blue', 'red', 'green'],
-			selected: 'Color',
+			options: ['Black', 'White', 'Blue', 'Red', 'Green'],
+			selected: this.props.selected,
 			menuOpen: false
 		}
 		this.dropMenu = this.dropMenu.bind(this);
@@ -20,9 +55,15 @@ class ColorSelect extends React.Component {
 	}
 
 	handleSelect(color) {
-		this.setState({
-			selected: color
-		})
+		this.props.handleClick(color);
+	}
+
+	componentDidUpdate(prevProps) {
+		if (prevProps.selected !== this.props.selected) {
+			this.setState({
+				selected: this.props.selected
+			})
+		}
 	}
 
 	render() {
@@ -31,10 +72,13 @@ class ColorSelect extends React.Component {
 			return <ColorSelectMenu dropMenu={this.dropMenu} handleSelect={this.handleSelect} options={this.state.options}/>
 		} else {
 			return (
+			  <div>
 				<div className='selectedColor' onClick={this.dropMenu}>
 				  <span className='smallIndent'>{this.state.selected}</span>
-				  <i class="fas fa-angle-down arrow"></i>
+				  <i className="fas fa-angle-down arrow"></i>
 				</div>
+				<ColorSwatches handleSelect={this.handleSelect} colors={this.state.options} selected={this.state.selected} />
+			  </div>
 			)
 		}
 	}

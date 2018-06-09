@@ -8,7 +8,7 @@ class SizeSelect extends React.Component {
 		super(props);
 		this.state = {
 			options: ['small', 'medium', 'large'],
-			selected: 'Size',
+			selected: this.props.selected,
 			menuOpen: false
 		}
 		this.dropMenu = this.dropMenu.bind(this);
@@ -23,9 +23,7 @@ class SizeSelect extends React.Component {
 	}
 
 	handleSelect(size) {
-		this.setState({
-			selected: size
-		})
+		this.props.handleClick(size);
 	}
 
 	setSizes() {
@@ -93,6 +91,10 @@ class SizeSelect extends React.Component {
 	componentDidUpdate(prevProps) {
 		if (prevProps.category !== this.props.category) {
 			this.setSizes();
+		} else if (prevProps.selected !== this.props.selected) {
+			this.setState({
+				selected: this.props.selected
+			})
 		}
 	}
 
@@ -105,7 +107,7 @@ class SizeSelect extends React.Component {
 			return (
 				<div className='selectedSize' onClick={this.dropMenu}>
 				  <span className='smallIndent'>{this.state.selected}</span>
-				  <i class="fas fa-angle-down arrow"></i>
+				  <i className="fas fa-angle-down arrow"></i>
 				</div>
 			)
 		}

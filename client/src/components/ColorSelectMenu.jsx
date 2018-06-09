@@ -22,7 +22,9 @@ class ColorSelectMenu extends React.Component {
 	      	    <circle r='13' cx='15' cy='15' stroke='black' strokeWidth='2' fill={color}>
 	      	    </circle>
 	      	  </svg>
-	      	  {color}
+	      	  <span className='colorOptionText'>
+	      	    {color}
+	      	  </span>
 	      	</div>
 	      ))}
 	    </div>
