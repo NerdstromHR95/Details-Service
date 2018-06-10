@@ -9,21 +9,9 @@ class SizeSelect extends React.Component {
 		this.state = {
 			options: ['small', 'medium', 'large'],
 			selected: this.props.selected,
-			menuOpen: false
+			menuOpen: this.props.menuDown
 		}
-		this.dropMenu = this.dropMenu.bind(this);
-		this.handleSelect = this.handleSelect.bind(this);
 		this.setSizes = this.setSizes.bind(this);
-	}
-
-	dropMenu() {
-		this.setState(prevState => ({
-			menuOpen: !prevState.menuOpen
-		}))
-	}
-
-	handleSelect(size) {
-		this.props.handleClick(size);
 	}
 
 	setSizes() {
@@ -84,28 +72,32 @@ class SizeSelect extends React.Component {
 	}
 
 	componentDidMount() {
-		console.log('Mounted!')
 		this.setSizes();
 	}
 
 	componentDidUpdate(prevProps) {
 		if (prevProps.category !== this.props.category) {
 			this.setSizes();
-		} else if (prevProps.selected !== this.props.selected) {
+		}
+		if (prevProps.selected !== this.props.selected) {
 			this.setState({
 				selected: this.props.selected
+			})
+		} 
+		if (this.state.menuOpen !== this.props.menuDown) {
+			this.setState({
+				menuOpen: this.props.menuDown
 			})
 		}
 	}
 
 	render() {
-		console.log(this.state.options)
 		const menuOpen = this.state.menuOpen
 		if (menuOpen) {
-			return <SizeSelectMenu dropMenu={this.dropMenu} handleSelect={this.handleSelect} options={this.state.options}/>
+			return <SizeSelectMenu toggleMenu={this.props.toggleMenu} changeSize={this.props.changeSize} options={this.state.options}/>
 		} else {
 			return (
-				<div className='selectedSize' onClick={this.dropMenu}>
+				<div className='selectedSize' onClick={this.props.toggleMenu}>
 				  <span className='smallIndent'>{this.state.selected}</span>
 				  <i className="fas fa-angle-down arrow"></i>
 				</div>

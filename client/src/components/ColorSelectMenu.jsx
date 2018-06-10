@@ -8,8 +8,8 @@ class ColorSelectMenu extends React.Component {
 	}
 
 	handleClick(e) {
-		this.props.dropMenu();
-		this.props.handleSelect(e.target.id)
+		this.props.toggleMenu();
+		this.props.changeColor(e.target.id)
 	}
 
 	render() {
@@ -17,7 +17,7 @@ class ColorSelectMenu extends React.Component {
 	    <div className='menu'>
 	      <div className='sizeOption'><strong className='smallIndent'>Please Choose A Color</strong></div>
 	      {this.props.options.map(color => (
-	      	<div className='colorOption' onClick={this.handleClick} key={color} id={color}>
+	      	<div className='colorOption' onClick={this.handleClick} key={color} id={color} >
 	      	  <svg className='circle' height='30' width='30'>
 	      	    <circle r='13' cx='15' cy='15' stroke='black' strokeWidth='2' fill={color}>
 	      	    </circle>
