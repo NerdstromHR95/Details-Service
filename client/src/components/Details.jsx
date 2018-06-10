@@ -15,7 +15,8 @@ class Details extends React.Component {
       selectedColor: 'Color',
       selectedSize: 'Size',
       sizeMenuDown: false,
-      colorMenuDown: false
+      colorMenuDown: false,
+      quantity: 1
     };
     this.getitem = this.getItem.bind(this);
     this.resetSelections = this.resetSelections.bind(this);
@@ -24,6 +25,7 @@ class Details extends React.Component {
     this.toggleSizeMenu = this.toggleSizeMenu.bind(this);
     this.toggleColorMenu = this.toggleColorMenu.bind(this);
     this.closeMenus = this.closeMenus.bind(this);
+    this.changeQuantity = this.changeQuantity.bind(this);
   }
 
   getItem() {
@@ -51,6 +53,16 @@ class Details extends React.Component {
   changeSize(size) {
     this.setState({
       selectedSize: size
+    })
+  }
+
+  changeQuantity(e) {
+    let value = e.target.value;
+    if (typeof value !== 'number') {
+      value = 1;
+    }
+    this.setState({
+      quantity: value
     })
   }
 
@@ -121,7 +133,7 @@ class Details extends React.Component {
         </div>
         <div className='formField'>
           <form>
-            <input type='text' className='inputField' value='1' />
+            <input type='text' className='inputField' placeHolder='1' onChange={this.changeQuantity}/>
             <div className='addButton' onClick={this.resetSelections} >
               Add to Bag
             </div>
