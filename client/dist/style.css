@@ -3,11 +3,18 @@
 	border: 1px solid #e3e3e3;
 	width: 300px;
 	height: 800px;
-	margin-top: 240px;
 	position: relative;
 	z-index: 1;
 	font-family: 'Lato';
 	color: rgb(57, 57, 57);
+	float: right;
+	filter: none;
+}
+
+.blurry {
+	transition: filter 0.5s;
+	-webkit-backface-visibility: hidden;
+	filter: blur(3px);
 }
 
 .title {
@@ -66,18 +73,21 @@
 
 .sizeDropdown:hover {
 	border-bottom: 3px solid #a4a8ad;
+	transition: border-bottom .3s;
 }
 
 .sizeOption {
-	width: 100%;
+	width: 285px;
 	height: 55px;
 	border: 1px solid #e3e3e3;
 	line-height: 55px;
 	background-color: white;
+	padding-left: 15px;
 }
 
 .sizeOption:hover {
 	border-bottom: 3px solid #bbbbbb;
+	transition: border-bottom .5s;
 }
 
 .selectedSize {
@@ -87,10 +97,12 @@
 	line-height: 40px;
 	font-size: 13px;
 	font-weight: 400;
+	margin-bottom: -3px;
 }
 
 .selectedSize:hover {
 	border-bottom: 3px solid #bbbbbb;
+	transition: border-bottom .3s;
 }
 
 .smallIndent {
@@ -113,6 +125,7 @@
 
 .selectedColor:hover {
 	border-bottom: 3px solid #bbbbbb;
+	transition: border-bottom .5s;
 }
 
 .menuBuffer {
@@ -139,7 +152,8 @@
 }
 
 .colorOption:hover {
-	border-bottom: 3px solid #bbbbbb;	
+	border-bottom: 3px solid #bbbbbb;
+	transition: border-bottom .5s;	
 }
 
 .menu {
@@ -203,6 +217,8 @@
 
 .addButton:hover {
 	background-color: grey;
+	cursor: pointer;
+	transition: background .5s;
 }
 
 .wishButton {
@@ -218,10 +234,116 @@
 
 .wishButton:hover {
 	background-color: grey;
+	cursor: pointer;
+	transition: background .5s;
 }
 
 .bottomDiv {
 	font-size: 13px;
 	margin-top: 12px;
 	line-height: 18.2px;
+}
+
+.popup {
+	width: 20%;
+	height: 622px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 62px;
+	padding: 0 39px 39px 39px;
+	position: absolute;
+	z-index: 10;
+	border: 1px solid rgb(227, 227, 227);
+	left: 600px;
+	background-color: white;
+	color: rgb(57, 57, 57);
+	text-align: center;
+	filter: drop-shadow(16px 16px 10px black)
+}
+
+.popTop {
+	display: inline-block;
+	height: 40px;
+	width: 32px;
+	line-height: 40px;
+	float: right;
+	text-align: right;
+	font-size: 1.5em;
+}
+
+.popTop:hover {
+	cursor: pointer;
+}
+
+.popTitle {
+	font-size: 19px;
+	font-weight: 700;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	margin-top: 39px;
+}
+
+.popSubtitle {
+	font-size: 13px;
+	font-weight: 400;
+	height: 18px;
+	line-height: 18px;
+	margin-top: 6px;
+	text-align: center;
+}
+
+.popPicture {
+	height: 328px;
+	margin-left: 15px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.popSize {
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.popColor {
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.popCheckout {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: black;
+	color: white;
+	margin-top: 28px;
+	margin-bottom: 23px;
+}
+
+.popViewBag {
+	text-decoration: underline;
+}
+
+.topPlaceholder {
+	height: 190px;
+	display: block;
+	background: grey;
+	font-size: 3em;
+	line-height: 190px;
+	text-align: center;
+	z-index: 1;
+	position: relative;
+}
+
+.rightPlaceholder {
+	display: inline-block;
+	width: 269px;
+	height: 800px;
+	background: grey;
+	font-size: 3em;
+	line-height: 190px;
+	text-align: center;
+	float: right;
 }

@@ -4,6 +4,7 @@ import SizeSelect from './SizeSelect.jsx';
 import ColorSelect from './ColorSelect.jsx';
 import StarRating from './StarRating.jsx';
 import ColorSwatches from './ColorSwatches.jsx';
+import Popup from './Popup.jsx'
 
 
 class Details extends React.Component {
@@ -16,6 +17,7 @@ class Details extends React.Component {
       selectedSize: 'Size',
       sizeMenuDown: false,
       colorMenuDown: false,
+      popupOut: false,
       quantity: 1
     };
     this.getitem = this.getItem.bind(this);
@@ -26,6 +28,8 @@ class Details extends React.Component {
     this.toggleColorMenu = this.toggleColorMenu.bind(this);
     this.closeMenus = this.closeMenus.bind(this);
     this.changeQuantity = this.changeQuantity.bind(this);
+    this.openPopup = this.openPopup.bind(this);
+    this.closePopup = this.closePopup.bind(this);
   }
 
   getItem() {
@@ -74,9 +78,30 @@ class Details extends React.Component {
     } else {
       this.setState({
         selectedSize: 'Size',
-        selectedColor: 'ColorSelect'
-      })
+        selectedColor: 'Color'
+      });
     }
+  }
+
+  openPopup() {
+    console.log('HIT')
+    if (this.state.selectedColor === 'Color') {
+      alert('You must choose a color');
+    } else if (this.state.selectedSize === 'Size') {
+      alert('You must choose a size');
+    } else {
+      this.setState({
+        popupOut: true
+      });
+    }
+  }
+
+  closePopup() {
+    this.setState({
+      selectedSize: 'Size',
+      selectedColor: 'Color',
+      popupOut: false,
+    })
   }
 
   toggleSizeMenu() {
@@ -103,47 +128,54 @@ class Details extends React.Component {
 
   render() {
     return (
-      <div className='main'> 
-        <div className='starRating' onClick={this.closeMenus}>
-          <StarRating starRating={this.state.product.star}/>
-        </div> 
-        <div className='title' onClick={this.closeMenus}>
-          {this.state.product.title} 
-        </div>
-        <div className='brand' onClick={this.closeMenus}>
-          {this.state.product.brand}
-        </div>
-        <div className='price' onClick={this.closeMenus}>
-          <strong>{this.state.product.price}</strong><span className='tab'>Free Shipping</span>
-        </div>
-        <div className='description' onClick={this.closeMenus}>
-          {this.state.product.description}
-        </div>
-        <div className='menuBuffer' onClick={this.closeMenus}></div>
-        <div className='sizes'>
-          <div>
-            <strong className='darkGrey'>Fit</strong>  <span className='small'>True to size.</span>
+      <div>
+        <Popup open={this.state.popupOut} closePopup={this.closePopup} color={this.state.selectedColor} size={this.state.selectedSize} />
+        <div className={this.state.popupOut ? 'blurry' : null}>
+          <div className='topPlaceholder'>Place Holder</div>
+          <div className='rightPlaceholder'>Place Holder</div>
+          <div className='main'> 
+            <div className='starRating' onClick={this.closeMenus}>
+              <StarRating starRating={this.state.product.star}/>
+            </div> 
+            <div className='title' onClick={this.closeMenus}>
+              {this.state.product.title} 
+            </div>
+            <div className='brand' onClick={this.closeMenus}>
+              {this.state.product.brand}
+            </div>
+            <div className='price' onClick={this.closeMenus}>
+              <strong>{this.state.product.price}</strong><span className='tab'>Free Shipping</span>
+            </div>
+            <div className='description' onClick={this.closeMenus}>
+              {this.state.product.description}
+            </div>
+            <div className='menuBuffer' onClick={this.closeMenus}></div>
+            <div className='sizes'>
+              <div>
+                <strong className='darkGrey'>Fit</strong>  <span className='small'>True to size.</span>
+              </div>
+              <SizeSelect selected={this.state.selectedSize} menuDown={this.state.sizeMenuDown} toggleMenu={this.toggleSizeMenu} changeSize={this.changeSize} category={this.state.product.category} />
+            </div>
+            <div className='menuBuffer' onClick={this.closeMenus}>{this.state.product.brand} Size Guide</div>
+            <div className='colors'>
+              <ColorSelect selected={this.state.selectedColor} menuDown={this.state.colorMenuDown} toggleMenu={this.toggleColorMenu} changeColor={this.changeColor} colors={this.state.colors}/>
+              <ColorSwatches changeColor={this.changeColor} selected={this.state.selectedColor} colors={this.state.colors} />
+            </div>
+            <div className='formField'>
+              <form>
+                <input type='text' className='inputField' placeHolder='1' onChange={this.changeQuantity}/>
+                <div className='addButton' onClick={this.openPopup} >
+                  Add to Bag
+                </div>
+                <div className='wishButton' onClick={this.resetSelections} >
+                  Add to Wishlist
+                </div>
+              </form>
+            </div>
+            <div className='bottomDiv'>
+              Available for pickup in multiple sizes near you.<br/><div style={{textDecoration:'underline'}}>See details</div>
+            </div>
           </div>
-          <SizeSelect selected={this.state.selectedSize} menuDown={this.state.sizeMenuDown} toggleMenu={this.toggleSizeMenu} changeSize={this.changeSize} category={this.state.product.category} />
-        </div>
-        <div className='menuBuffer' onClick={this.closeMenus}>{this.state.product.brand} Size Guide</div>
-        <div className='colors'>
-          <ColorSelect selected={this.state.selectedColor} menuDown={this.state.colorMenuDown} toggleMenu={this.toggleColorMenu} changeColor={this.changeColor} colors={this.state.colors}/>
-          <ColorSwatches changeColor={this.changeColor} selected={this.state.selectedColor} colors={this.state.colors} />
-        </div>
-        <div className='formField'>
-          <form>
-            <input type='text' className='inputField' placeHolder='1' onChange={this.changeQuantity}/>
-            <div className='addButton' onClick={this.resetSelections} >
-              Add to Bag
-            </div>
-            <div className='wishButton' onClick={this.resetSelections} >
-              Add to Wishlist
-            </div>
-          </form>
-        </div>
-        <div className='bottomDiv'>
-          Available for pickup in multiple sizes near you.<br/><div style={{textDecoration:'underline'}}>See details</div>
         </div>
       </div>
     );
