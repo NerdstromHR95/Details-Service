@@ -98,7 +98,7 @@ class SizeSelect extends React.Component {
 		} else {
 			return (
 				<div className='selectedSize' onClick={this.props.toggleMenu}>
-				  <span className='smallIndent'>{this.state.selected}</span>
+				  {this.state.selected === 'Size' ? <span className='smallIndent menuDefault'>{this.state.selected}</span> : <span className='smallIndent'>{this.state.selected}</span>}
 				  <i className="fas fa-angle-down arrow"></i>
 				</div>
 			)

@@ -3,34 +3,40 @@
 	border: 1px solid #e3e3e3;
 	width: 300px;
 	height: 800px;
-	margin-top: 160px;
+	margin-top: 240px;
 	position: relative;
 	z-index: 1;
 	font-family: 'Lato';
+	color: rgb(57, 57, 57);
 }
 
 .title {
 	display: block;
-	font-size: 1.4em;
+	font-size: 19px;
 	margin-bottom: 3px;
+	margin-top: 5px;
 	color: #373738;
 }
 
 .brand {
 	display: block;
-	font-size: 1em;
-	font-weight: lighter;
+	font-size: 13px;
+	font-weight: 400;
 	color: #373738;
 }
 
 .price {
 	display: block;
 	margin-top: 20px;
+	font-size: 15px;
+	font-weight: 700;
 }
 
 .tab {
 	padding-left: 30px;
 	color: #373738;
+	font-size: 13px;
+	font-weight: 400;
 }
 
 .description {
@@ -38,6 +44,7 @@
 	margin-top: 15px;
 	font-size: .9em;
 	color: #373738; 
+	line-height: 18.2px;
 }
 
 .sizes {
@@ -78,6 +85,8 @@
 	height: 40px;
 	border: 1px solid #e3e3e3;
 	line-height: 40px;
+	font-size: 13px;
+	font-weight: 400;
 }
 
 .selectedSize:hover {
@@ -93,6 +102,13 @@
 	height: 40px;
 	border: 1px solid #e3e3e3;
 	line-height: 40px;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.menuDefault {
+	font-size: 13px;
+	font-weight: 700;
 }
 
 .selectedColor:hover {
@@ -102,6 +118,9 @@
 .menuBuffer {
 	display: block;
 	height: 40px;
+	text-align: right;
+	line-height: 40px;
+	text-decoration: underline;
 }
 
 .colorOption {
@@ -142,6 +161,8 @@
 .circle {
 	margin-top: 10px;
 	margin-left: 10px;
+	padding-bottom: 5px;
+	padding-right: 5px;
 }
 
 .colorSwatches {
@@ -177,6 +198,7 @@
 	color: white;
 	line-height: 40px;
 	text-align: center;
+	font-size: 13px;
 }
 
 .addButton:hover {
@@ -188,12 +210,18 @@
 	width: 100%;
 	margin-top: 40px;
 	background-color: white;
-	color: black;
 	line-height: 40px;
 	text-align: center;
 	border: 1px solid #e3e3e3;
+	font-size: 13px;
 }
 
 .wishButton:hover {
 	background-color: grey;
+}
+
+.bottomDiv {
+	font-size: 13px;
+	margin-top: 12px;
+	line-height: 18.2px;
 }
