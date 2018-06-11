@@ -33,7 +33,7 @@ class ColorSelect extends React.Component {
 			return (
 			  <div>
 				<div className='selectedColor' onClick={this.props.toggleMenu}>
-				  <span className='smallIndent'>{this.state.selected}</span>
+				  {this.state.selected === 'Color' ? <span className='smallIndent menuDefault'>{this.state.selected}</span> : <span className='smallIndent'>{this.state.selected}</span>}
 				  <i className="fas fa-angle-down arrow"></i>
 				</div>
 			  </div>

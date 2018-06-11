@@ -122,11 +122,11 @@ class Details extends React.Component {
         <div className='menuBuffer' onClick={this.closeMenus}></div>
         <div className='sizes'>
           <div>
-            <strong>Fit</strong>  <span className='small'>True to size.</span>
+            <strong className='darkGrey'>Fit</strong>  <span className='small'>True to size.</span>
           </div>
           <SizeSelect selected={this.state.selectedSize} menuDown={this.state.sizeMenuDown} toggleMenu={this.toggleSizeMenu} changeSize={this.changeSize} category={this.state.product.category} />
         </div>
-        <div className='menuBuffer' onClick={this.closeMenus}></div>
+        <div className='menuBuffer' onClick={this.closeMenus}>{this.state.product.brand} Size Guide</div>
         <div className='colors'>
           <ColorSelect selected={this.state.selectedColor} menuDown={this.state.colorMenuDown} toggleMenu={this.toggleColorMenu} changeColor={this.changeColor} colors={this.state.colors}/>
           <ColorSwatches changeColor={this.changeColor} selected={this.state.selectedColor} colors={this.state.colors} />
@@ -141,6 +141,9 @@ class Details extends React.Component {
               Add to Wishlist
             </div>
           </form>
+        </div>
+        <div className='bottomDiv'>
+          Available for pickup in multiple sizes near you.<br/><div style={{textDecoration:'underline'}}>See details</div>
         </div>
       </div>
     );
