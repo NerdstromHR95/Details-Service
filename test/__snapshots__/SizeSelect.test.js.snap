@@ -1,9 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Menu-Open state toggles when clicked 1`] = `
+exports[`Should render Small as selected 1`] = `
 <div
   className="selectedSize"
-  onClick={[Function]}
+>
+  <span
+    className="smallIndent"
+  >
+    Small
+  </span>
+  <i
+    className="fas fa-angle-down arrow"
+  />
+</div>
+`;
+
+exports[`Should render closed menu 1`] = `
+<div
+  className="selectedSize"
 >
   <span
     className="smallIndent"
@@ -14,7 +28,7 @@ exports[`Menu-Open state toggles when clicked 1`] = `
 </div>
 `;
 
-exports[`Menu-Open state toggles when clicked 2`] = `
+exports[`Should render open menu 1`] = `
 <div
   className="menu"
 >

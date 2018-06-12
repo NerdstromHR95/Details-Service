@@ -5,7 +5,7 @@ const StarRating = function(props) {
 	const halfStar = (props.starRating % 20) !== 0
 	const starCount = Math.floor(props.starRating / 20)
 	for (let i = 0; i < starCount; i++) {
-		stars.push(<i className="fas fa-star"></i>)
+		stars.push(<i key={i} className="fas fa-star"></i>)
 	}
 	return (
 		<div className='starRating'>

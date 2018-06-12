@@ -1,9 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should open menu when clicked 1`] = `
-<div
-  onClick={[Function]}
->
+exports[`Should render Red as selected 1`] = `
+<div>
+  <div
+    className="selectedColor"
+  >
+    <span
+      className="smallIndent"
+    >
+      Red
+    </span>
+    <i
+      className="fas fa-angle-down arrow"
+    />
+  </div>
+</div>
+`;
+
+exports[`Should render closed menu 1`] = `
+<div>
   <div
     className="selectedColor"
   >
@@ -14,99 +29,10 @@ exports[`Should open menu when clicked 1`] = `
       className="fas fa-angle-down arrow"
     />
   </div>
-  <div
-    className="colorSwatches"
-  >
-    <svg
-      className="circle"
-      height="35"
-      width="35"
-    >
-      <circle
-        className="frontCircle"
-        cx="15"
-        cy="15"
-        fill="Black"
-        id="Black"
-        onClick={[Function]}
-        r="13"
-        stroke="grey"
-        strokeWidth="1"
-      />
-    </svg>
-    <svg
-      className="circle"
-      height="35"
-      width="35"
-    >
-      <circle
-        className="frontCircle"
-        cx="15"
-        cy="15"
-        fill="White"
-        id="White"
-        onClick={[Function]}
-        r="13"
-        stroke="grey"
-        strokeWidth="1"
-      />
-    </svg>
-    <svg
-      className="circle"
-      height="35"
-      width="35"
-    >
-      <circle
-        className="frontCircle"
-        cx="15"
-        cy="15"
-        fill="Blue"
-        id="Blue"
-        onClick={[Function]}
-        r="13"
-        stroke="grey"
-        strokeWidth="1"
-      />
-    </svg>
-    <svg
-      className="circle"
-      height="35"
-      width="35"
-    >
-      <circle
-        className="frontCircle"
-        cx="15"
-        cy="15"
-        fill="Red"
-        id="Red"
-        onClick={[Function]}
-        r="13"
-        stroke="grey"
-        strokeWidth="1"
-      />
-    </svg>
-    <svg
-      className="circle"
-      height="35"
-      width="35"
-    >
-      <circle
-        className="frontCircle"
-        cx="15"
-        cy="15"
-        fill="Green"
-        id="Green"
-        onClick={[Function]}
-        r="13"
-        stroke="grey"
-        strokeWidth="1"
-      />
-    </svg>
-  </div>
 </div>
 `;
 
-exports[`Should open menu when clicked 2`] = `
+exports[`Should render open menu 1`] = `
 <div
   className="menu"
 >
