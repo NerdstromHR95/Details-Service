@@ -85,7 +85,6 @@ class Details extends React.Component {
   }
 
   openPopup() {
-    console.log('HIT')
     if (this.state.selectedColor === 'Color') {
       alert('You must choose a color');
     } else if (this.state.selectedSize === 'Size') {
@@ -165,7 +164,7 @@ class Details extends React.Component {
             </div>
             <div className='formField'>
               <form>
-                <input type='text' className='inputField' placeHolder='1' onChange={this.changeQuantity}/>
+                <input type='text' className='inputField' placeholder='1' onChange={this.changeQuantity}/>
                 <div className='addButton' onClick={this.openPopup} >
                   {this.state.added ? <div><i className="fas fa-clipboard-check"></i> In Your Bag</div> : 'Add to Bag'}
                 </div>

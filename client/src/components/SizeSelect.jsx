@@ -15,7 +15,6 @@ class SizeSelect extends React.Component {
 	}
 
 	setSizes() {
-		console.log('state should change now', this.props.category);
 		if (this.props.category === 'mensShirt' || this.props.category === 'mensSweater') {
 			axios.get('http://localhost:3004/mensShirtSize')
 			  .then(res => {
@@ -66,8 +65,6 @@ class SizeSelect extends React.Component {
 			  .catch(err => {
 			  	console.log('ERROR: ', err);
 			  });
-		} else {
-			console.log('Set Sizes Did Not Work!')
 		}
 	}
 
