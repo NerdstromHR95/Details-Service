@@ -77,7 +77,7 @@
 }
 
 .sizeOption {
-	width: 285px;
+	width: 284px;
 	height: 55px;
 	border: 1px solid #e3e3e3;
 	line-height: 55px;
@@ -91,7 +91,7 @@
 }
 
 .selectedSize {
-	width: 100%;
+	width: 299px;
 	height: 40px;
 	border: 1px solid #e3e3e3;
 	line-height: 40px;
@@ -110,7 +110,7 @@
 }
 
 .selectedColor {
-	width: 100%;
+	width: 299px;
 	height: 40px;
 	border: 1px solid #e3e3e3;
 	line-height: 40px;
@@ -137,7 +137,7 @@
 }
 
 .colorOption {
-	width: 100%;
+	width: 299px;
 	height: 55px;
 	border: 1px solid #e3e3e3;
 	line-height: 55px;
