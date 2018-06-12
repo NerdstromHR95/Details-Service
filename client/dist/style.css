@@ -347,3 +347,9 @@
 	text-align: center;
 	float: right;
 }
+
+.fa-clipboard-check {
+	font-size: 25px;
+	margin-top: 5px;
+	margin-right: 5px;	
+}

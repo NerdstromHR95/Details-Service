@@ -18,7 +18,8 @@ class Details extends React.Component {
       sizeMenuDown: false,
       colorMenuDown: false,
       popupOut: false,
-      quantity: 1
+      quantity: 1,
+      added: false
     };
     this.getitem = this.getItem.bind(this);
     this.resetSelections = this.resetSelections.bind(this);
@@ -78,7 +79,7 @@ class Details extends React.Component {
     } else {
       this.setState({
         selectedSize: 'Size',
-        selectedColor: 'Color'
+        selectedColor: 'Color',
       });
     }
   }
@@ -91,7 +92,8 @@ class Details extends React.Component {
       alert('You must choose a size');
     } else {
       this.setState({
-        popupOut: true
+        popupOut: true,
+        added: true
       });
     }
   }
@@ -165,10 +167,10 @@ class Details extends React.Component {
               <form>
                 <input type='text' className='inputField' placeHolder='1' onChange={this.changeQuantity}/>
                 <div className='addButton' onClick={this.openPopup} >
-                  Add to Bag
+                  {this.state.added ? <div><i className="fas fa-clipboard-check"></i> In Your Bag</div> : 'Add to Bag'}
                 </div>
                 <div className='wishButton' onClick={this.resetSelections} >
-                  Add to Wishlist
+                  Add To Wish List
                 </div>
               </form>
             </div>
