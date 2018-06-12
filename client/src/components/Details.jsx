@@ -34,7 +34,7 @@ class Details extends React.Component {
   }
 
   getItem() {
-    axios.get('http://localhost:3000/item')
+    axios.get('http://localhost:3004/item')
       .then(res => {
         this.setState({
           product: res.data[0]
