@@ -34,7 +34,7 @@ class Details extends React.Component {
   }
 
   getItem() {
-    axios.get('http://localhost:3004/item')
+    axios.get('http://localhost:3004/details/item')
       .then(res => {
         this.setState({
           product: res.data[0]
@@ -132,8 +132,6 @@ class Details extends React.Component {
       <div>
         <Popup open={this.state.popupOut} closePopup={this.closePopup} color={this.state.selectedColor} size={this.state.selectedSize} />
         <div className={this.state.popupOut ? 'blurry' : null}>
-          <div className='topPlaceholder'>Place Holder</div>
-          <div className='rightPlaceholder'>Place Holder</div>
           <div className='main'> 
             <div className='starRating' onClick={this.closeMenus}>
               <StarRating starRating={this.state.product.star}/>

@@ -16,7 +16,7 @@ class SizeSelect extends React.Component {
 
 	setSizes() {
 		if (this.props.category === 'mensShirt' || this.props.category === 'mensSweater') {
-			axios.get('http://localhost:3004/mensShirtSize')
+			axios.get('http://localhost:3004/details/mensShirtSize')
 			  .then(res => {
 			  	this.setState({
 			  		options: res.data[0].size
@@ -26,7 +26,7 @@ class SizeSelect extends React.Component {
 			  	console.log('ERROR: ', err);
 			  });
 		} else if (this.props.category === 'mensPants' || this.props.category === 'mensJeans') {
-			axios.get('http://localhost:3004/mensPantsSize')
+			axios.get('http://localhost:3004/details/mensPantsSize')
 			  .then(res => {
 			  	this.setState({
 			  		options: res.data[0].size
@@ -36,7 +36,7 @@ class SizeSelect extends React.Component {
 			  	console.log('ERROR: ', err);
 			  });
 		} else if (this.props.category === 'mensShorts') {
-			axios.get('http://localhost:3004/mensShortsSize')
+			axios.get('http://localhost:3004/details/mensShortsSize')
 			  .then(res => {
 			  	this.setState({
 			  		options: res.data[0].size
@@ -46,7 +46,7 @@ class SizeSelect extends React.Component {
 			  	console.log('ERROR: ', err);
 			  });
 		} else if (this.props.category === 'womensDress') {
-			axios.get('http://localhost:3004/womensDressSize')
+			axios.get('http://localhost:3004/details/womensDressSize')
 			  .then(res => {
 			  	this.setState({
 			  		options: res.data[0].size
@@ -56,7 +56,7 @@ class SizeSelect extends React.Component {
 			  	console.log('ERROR: ', err);
 			  });
 		} else if (this.props.category === 'womensSkirt' || this.props.category === 'womensShirt' || this.props.category === 'womensJacket' || this.props.category === 'womensSweater') {
-			axios.get('http://localhost:3004/womensShirtSize')
+			axios.get('http://localhost:3004/details/womensShirtSize')
 			  .then(res => {
 			  	this.setState({
 			  		options: res.data[0].size
