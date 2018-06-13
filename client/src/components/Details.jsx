@@ -34,7 +34,7 @@ class Details extends React.Component {
   }
 
   getItem() {
-    axios.get('http://localhost:3000/item')
+    axios.get('http://localhost:3004/details/item')
       .then(res => {
         this.setState({
           product: res.data[0]
@@ -85,7 +85,6 @@ class Details extends React.Component {
   }
 
   openPopup() {
-    console.log('HIT')
     if (this.state.selectedColor === 'Color') {
       alert('You must choose a color');
     } else if (this.state.selectedSize === 'Size') {
@@ -133,8 +132,6 @@ class Details extends React.Component {
       <div>
         <Popup open={this.state.popupOut} closePopup={this.closePopup} color={this.state.selectedColor} size={this.state.selectedSize} />
         <div className={this.state.popupOut ? 'blurry' : null}>
-          <div className='topPlaceholder'>Place Holder</div>
-          <div className='rightPlaceholder'>Place Holder</div>
           <div className='main'> 
             <div className='starRating' onClick={this.closeMenus}>
               <StarRating starRating={this.state.product.star}/>
@@ -165,7 +162,7 @@ class Details extends React.Component {
             </div>
             <div className='formField'>
               <form>
-                <input type='text' className='inputField' placeHolder='1' onChange={this.changeQuantity}/>
+                <input type='text' className='inputField' placeholder='1' onChange={this.changeQuantity}/>
                 <div className='addButton' onClick={this.openPopup} >
                   {this.state.added ? <div><i className="fas fa-clipboard-check"></i> In Your Bag</div> : 'Add to Bag'}
                 </div>
