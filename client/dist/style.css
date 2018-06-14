@@ -1,6 +1,5 @@
-.main {
+#detailsComponent {
 	display: inline-block;
-	border: 1px solid #e3e3e3;
 	width: 300px;
 	height: 800px;
 	position: relative;
@@ -223,7 +222,7 @@
 
 .wishButton {
 	height: 40px;
-	width: 100%;
+	width: 298px;
 	margin-top: 40px;
 	background-color: white;
 	line-height: 40px;
@@ -251,7 +250,7 @@
 	margin-right: auto;
 	margin-top: 62px;
 	padding: 0 39px 39px 39px;
-	position: absolute;
+	position: fixed;
 	z-index: 10;
 	border: 1px solid rgb(227, 227, 227);
 	left: 600px;
@@ -327,7 +326,8 @@
 }
 
 .topPlaceholder {
-	height: 190px;
+	margin: 35px 0;
+	width: 100%;
 	display: block;
 	background: grey;
 	font-size: 3em;
@@ -339,7 +339,7 @@
 
 .rightPlaceholder {
 	display: inline-block;
-	width: 269px;
+	width: 262px;
 	height: 800px;
 	background: grey;
 	font-size: 3em;
@@ -352,4 +352,35 @@
 	font-size: 25px;
 	margin-top: 5px;
 	margin-right: 5px;	
+}
+
+#photoview {
+	display: inline-block;
+	width: 1150px;
+	height: 800px;
+	margin-left: 89px;
+}
+
+#photoview .slick-list {
+	width: 100px;
+}
+
+.container img {
+	margin-top: 0;
+}
+
+.carousel .slick-prev, .carousel .slick-next {
+	left: 0;
+}
+
+#outfit {
+	height: 575px;
+	margin: 50px 0;
+	padding: 50px 0;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+}
+
+body {
+	font-family: 'Lato';
 }
